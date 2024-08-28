@@ -8,7 +8,7 @@ search.addEventListener("click", searchUser);
 async function searchUser() {
   const rest = await fetch(`https://api.github.com/users/${login.value}`);
   const obj = await rest.json();
-  console.log(info)
+  login.value = ""
   info.innerHTML = `
         <img src="${obj.avatar_url}" alt="logo">
         <h2>Логин: ${obj.login}</h2>
